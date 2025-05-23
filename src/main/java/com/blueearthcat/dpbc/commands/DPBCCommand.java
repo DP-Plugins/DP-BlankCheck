@@ -25,7 +25,7 @@ public class DPBCCommand {
             if (args.length == 1) DPBCFunction.openConfigSettingGUI((Player)p);
             else p.sendMessage(prefix + lang.get("help_item"));
         });
-        builder.addSubCommand("check", "dpbc.admin", lang.get("help_check"), true, (p, args) -> {
+        builder.addSubCommand("check", lang.get("help_check"), true, (p, args) -> {
             if (args.length == 2) DPBCFunction.giveCheck((Player)p,args[1], null);
             else if (args.length == 3) DPBCFunction.giveCheck((Player)p, args[1], args[2]);
             else p.sendMessage(prefix + lang.get("help_check"));

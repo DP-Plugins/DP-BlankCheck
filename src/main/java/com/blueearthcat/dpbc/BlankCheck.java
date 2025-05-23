@@ -4,6 +4,7 @@ import com.blueearthcat.dpbc.commands.DPBCCommand;
 import com.blueearthcat.dpbc.events.DPBCEvent;
 import com.blueearthcat.dpbc.functions.DPBCFunction;
 import com.darksoldier1404.dppc.utils.DataContainer;
+import com.darksoldier1404.dppc.utils.PluginUtil;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class BlankCheck extends JavaPlugin {
@@ -14,11 +15,12 @@ public class BlankCheck extends JavaPlugin {
 
     @Override
     public void onLoad(){
+        plugin = this;
+        PluginUtil.addPlugin(plugin, 25953);
     }
 
     @Override
     public void onEnable(){
-        plugin = this;
         data = new DataContainer(plugin, true);
         plugin.getServer().getPluginManager().registerEvents(new DPBCEvent(), plugin);
         getCommand("dpbc").setExecutor(new DPBCCommand().getExecuter());
