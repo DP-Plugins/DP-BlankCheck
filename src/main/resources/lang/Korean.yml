@@ -1,0 +1,29 @@
+Lang: Korean
+
+#Commands
+
+help_item: "/dpbc item - 수표 아이템을 설정합니다."
+help_config: "/dpbc config - 설정 GUI를 엽니다."
+help_check: "/dpbc check <price> (amount) - 수표를 발행합니다."
+
+#Functions
+
+item_setting_title: "아이템 설정"
+config_setting_title: "Config 설정"
+config_check_issuer: "수표 제작자 표시"
+config_check_true: " §a(활성화)"
+config_check_false: " §c(비활성화)"
+config_check_issuer_lore: "§f클릭하여 수표 제작자 표시 전환"
+config_check_issue_date: "수표 제작 날짜 표시"
+config_check_issue_date_lore: "§f클릭하여 수표 제작 날짜 표시 전환"
+
+check_price_wrong: "가격 설정이 잘못되었습니다."
+check_amount_wrong: "개수 설정이 잘못되었습니다."
+check_no_money: "돈이 부족합니다."
+check_has_no_space: "인벤토리 공간이 부족합니다."
+
+#events
+
+save_config: "Config 저장됨"
+save_check_item: "수표 아이템 저장됨."
+add_money: "원을 획득했습니다."

@@ -1,0 +1,6 @@
+Settings:
+  Lang: English
+  prefix: "&f[ &eDP-BlankCheck &f] "
+  UseCheckIssuer: true
+  UseCheckIssueDate: true
+  DateFormat: "MM-dd-YYYY HH:mm:ss"

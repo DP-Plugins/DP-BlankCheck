@@ -1,0 +1,28 @@
+Lang: English
+
+#Commands
+
+help_item: "/dpbc item - Setting Check Item."
+help_config: "/dpbc config - Open Config GUI"
+help_check: "/dpbc check <price> (amount) - Make Check Item"
+
+#Functions
+
+item_setting_title: "Item Setting"
+config_setting_title: "Config Setting"
+config_check_issuer: "Check Issuer Visible"
+config_check_true: " §a(Enable)"
+config_check_false: " §c(Disable)"
+config_check_issuer_lore: "§fClick to switch Check Issuer Visible"
+config_check_issue_date: "Check Issue Date Visible"
+config_check_issue_date_lore: "§fClick to switch Check Issue Date Visible"
+check_price_wrong: "The price is set incorrectly."
+check_amount_wrong: "The amount is set incorrectly."
+check_no_money: "You don't have enough money."
+check_has_no_space: "You don't have enough inventory space."
+
+#events
+
+save_config: "Config saved"
+save_check_item: "Check item has been saved."
+add_money: "$ added."
