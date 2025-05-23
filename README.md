@@ -49,6 +49,9 @@ DP-BlankCheck는 수표를 생성하는 간단한 플러그인입니다. 수표�
 |--------|--------------------|
 | `/dpbc check <price> (amount)` | 돈을 소비하여 수표를 생성합니다. |
 
+### 권한
+- dpbc.admin: 수표 아이템과 Config 설정을 수정하는 GUI를 엽니다.
+
 ## 사용법 예시
 - 아이템 설정 GUI: `/dpbc item`
 - Config GUI: `/dpbc config`
@@ -94,6 +97,9 @@ DP-BlankCheck is a simple plugin for creating checks. You can customize the item
 |---------|------------------------------------------------------------------------|
 | `/dpbc check <price> (amount)` | Consumes money to create checks. |
 
+### Permissions
+- dpbc.admin: Opens a GUI to edit the check item and config settings.
+ 
 ## Usage Examples
 - Open Item Setting GUI: `/dpbc item`
 - Open Config GUI: `/dpbc config`
