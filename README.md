@@ -58,9 +58,9 @@ DP-BlankCheck는 수표를 생성하는 간단한 플러그인입니다. 수표�
 - 수표 생성: `/dpbc check <price> (amount)`
 
 ## 플레이스홀더
-- <check_price> : 가격
-- <check_issuer> : 수표 생성자
-- <check_issue_date> : 수표 생성 일자
+- `<check_price>` : 가격
+- `<check_issuer>` : 수표 생성자
+- `<check_issue_date>` : 수표 생성 일자
 
 </details>
 
@@ -107,9 +107,9 @@ DP-BlankCheck is a simple plugin for creating checks. You can customize the item
 
 
 ## PlaceHolders
-- <check_price> : Price
-- <check_issuer> : Check Issuer
-- <check_issue_date> : Check Issue Date
+- `<check_price>` : Price
+- `<check_issuer>` : Check Issuer
+- `<check_issue_date>` : Check Issue Date
 </details>
 
 <br>
