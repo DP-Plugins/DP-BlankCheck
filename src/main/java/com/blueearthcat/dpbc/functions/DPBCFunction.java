@@ -65,12 +65,14 @@ public class DPBCFunction {
         DInventory inv = new DInventory(null, lang.get("config_setting_title"), 27, plugin);
         for (int i = 0; i < inv.getSize(); i++) {
             if (i == 12 || i == 14) continue;
-            inv.setItem(i, new ItemBuilder(new ItemStack(Material.BLACK_STAINED_GLASS_PANE))
-                    .setItemName("§r").build()
-            );
+            ItemStack item = new ItemStack(Material.BLACK_STAINED_GLASS_PANE);
+            ItemMeta im = item.getItemMeta();
+            im.setDisplayName("§r");
+            item.setItemMeta(im);
+            inv.setItem(i, item);
         }
         ItemStack item = NBT.setStringTag(new ItemBuilder(new ItemStack(Material.GLASS_PANE))
-                .setItemName(lang.get("config_check_issuer") + lang.get("config_check_true"))
+                .setDisplayName(lang.get("config_check_issuer") + lang.get("config_check_true"))
                 .addLore("")
                 .addLore(lang.get("config_check_issuer_lore"))
                 .build(), "dpbc_checkIssuer", "true");
