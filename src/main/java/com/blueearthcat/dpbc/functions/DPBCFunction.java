@@ -14,6 +14,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.darksoldier1404.dppc.api.essentials.MoneyAPI.hasEnoughMoney;
@@ -28,7 +29,16 @@ public class DPBCFunction {
     public static void init(){
         if (config.getItemStack("Settings.CheckItem") == null) {
             YamlConfiguration data = config;
-            data.set("Settings.CheckItem", new ItemStack(Material.PAPER));
+            ItemStack item = new ItemStack(Material.PAPER);
+            ItemMeta im = item.getItemMeta();
+            im.setDisplayName("§f<check_price>$ Check");
+            List<String> lore = new ArrayList<>();
+            lore.add("§7");
+            lore.add("§7<check_issuer>");
+            lore.add("§7<check_issue_date>");
+            im.setLore(lore);
+            item.setItemMeta(im);
+            data.set("Settings.CheckItem", item);
             plugin.data.setConfig(data);
             plugin.data.save();
         }
@@ -55,12 +65,14 @@ public class DPBCFunction {
         DInventory inv = new DInventory(null, lang.get("config_setting_title"), 27, plugin);
         for (int i = 0; i < inv.getSize(); i++) {
             if (i == 12 || i == 14) continue;
-            inv.setItem(i, new ItemBuilder(new ItemStack(Material.BLACK_STAINED_GLASS_PANE))
-                    .setItemName("§r").build()
-            );
+            ItemStack item = new ItemStack(Material.BLACK_STAINED_GLASS_PANE);
+            ItemMeta im = item.getItemMeta();
+            im.setDisplayName("§r");
+            item.setItemMeta(im);
+            inv.setItem(i, item);
         }
         ItemStack item = NBT.setStringTag(new ItemBuilder(new ItemStack(Material.GLASS_PANE))
-                .setItemName(lang.get("config_check_issuer") + lang.get("config_check_true"))
+                .setDisplayName(lang.get("config_check_issuer") + lang.get("config_check_true"))
                 .addLore("")
                 .addLore(lang.get("config_check_issuer_lore"))
                 .build(), "dpbc_checkIssuer", "true");
