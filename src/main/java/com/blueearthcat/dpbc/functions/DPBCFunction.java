@@ -14,6 +14,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.darksoldier1404.dppc.api.essentials.MoneyAPI.hasEnoughMoney;
@@ -28,7 +29,16 @@ public class DPBCFunction {
     public static void init(){
         if (config.getItemStack("Settings.CheckItem") == null) {
             YamlConfiguration data = config;
-            data.set("Settings.CheckItem", new ItemStack(Material.PAPER));
+            ItemStack item = new ItemStack(Material.PAPER);
+            ItemMeta im = item.getItemMeta();
+            im.setDisplayName("§f<check_price>$ Check");
+            List<String> lore = new ArrayList<>();
+            lore.add("§7");
+            lore.add("§7<check_issuer>");
+            lore.add("§7<check_issue_date>");
+            im.setLore(lore);
+            item.setItemMeta(im);
+            data.set("Settings.CheckItem", item);
             plugin.data.setConfig(data);
             plugin.data.save();
         }
