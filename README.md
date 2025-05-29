@@ -44,6 +44,10 @@ DP-BlankCheck는 수표를 생성하는 간단한 플러그인입니다. 수표�
 | `/dpbc item` | 수표 아이템을 설정하는 GUI를 엽니다. |
 | `/dpbc config` | Config를 수정하는 GUI를 엽니다. |
 
+**주의사항** : 수표에 사용될 아이템의 이름과 설명은 다른 플러그인의 기능으로 수정한 후에 아이템을 설정해야합니다. 
+
+**(이 플러그인은 Config reload를 지원하지 않습니다!)**
+
 ### 유저 명령어
 | 명령어 | 설명                 |
 |--------|--------------------|
@@ -88,6 +92,10 @@ DP-BlankCheck is a simple plugin for creating checks. You can customize the item
 |---------|-----------------------------|
 | `/dpbc item` | Open Check Item Setting GUI. |
 | `/dpbc config` | Open Config Setting GUI.    |
+
+**NOTE**: The name and description of the item to be used in the check must be modified by another plugin before setting the item.
+
+**(This plugin does not support Config reload!)**
 
 ### Player Commands
 | Command | Description                                                            |
