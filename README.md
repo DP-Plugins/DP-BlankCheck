@@ -21,7 +21,7 @@
 
 ![](https://dpnw.site/assets/img/desc_card/desc.jpg)
 
-# DP-SimplePrefix 플러그인 소개
+# DP-BlankCheck 플러그인 소개
 DP-BlankCheck는 수표를 생성하는 간단한 플러그인입니다. 수표에 사용될 아이템과 Config를 수정할 수 있습니다. 자체 플레이스 홀더를 지원합니다.
 
 ## 플러그인 특징
