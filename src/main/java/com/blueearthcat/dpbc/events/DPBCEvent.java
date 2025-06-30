@@ -47,8 +47,8 @@ public class DPBCEvent implements Listener {
     }
     @EventHandler
     public void onInventoryClose(InventoryCloseEvent e){
-        if (e.getInventory() instanceof DInventory){
-            DInventory inv = (DInventory) e.getInventory();
+        if (e.getInventory().getHolder() instanceof DInventory){
+            DInventory inv = (DInventory) e.getInventory().getHolder();
             if (!inv.isValidHandler(plugin)) return;
             if (inv.getChannel() == 0){
                 if (e.getInventory().getItem(13) == null) return;
@@ -66,8 +66,8 @@ public class DPBCEvent implements Listener {
     }
     @EventHandler
     public void onInventoryClick(InventoryClickEvent e){
-        if (e.getInventory() instanceof DInventory){
-            DInventory inv = (DInventory) e.getInventory();
+        if (e.getInventory().getHolder() instanceof DInventory){
+            DInventory inv = (DInventory) e.getInventory().getHolder();
             if (!inv.isValidHandler(plugin)) return;
             if (e.getCurrentItem() == null) return;
             ItemStack item = e.getCurrentItem();
