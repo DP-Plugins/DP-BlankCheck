@@ -1,5 +1,5 @@
 name: DP-BlankCheck
-version: 1.0.0.1
+version: 1.0.0.2
 main: com.blueearthcat.dpbc.BlankCheck
 api-version: 1.14
 authors: [ BlueEarthCat ]
