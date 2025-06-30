@@ -50,7 +50,7 @@ public class DPBCFunction {
         return item;
     }
     public static void openItemSettingGUI(Player p) {
-        DInventory inv = new DInventory(null, lang.get("item_setting_title"), 27, plugin);
+        DInventory inv = new DInventory(lang.get("item_setting_title"), 27, plugin);
         for (int i = 0; i < inv.getSize(); i++) {
             if (i == 13) continue;
             ItemStack item = new ItemStack(Material.BLACK_STAINED_GLASS_PANE);
@@ -58,11 +58,11 @@ public class DPBCFunction {
         }
         inv.setItem(13, config.getItemStack("Settings.CheckItem"));
         inv.setChannel(0);
-        p.openInventory(inv);
+        p.openInventory(inv.getInventory());
     }
 
     public static void openConfigSettingGUI(Player p) {
-        DInventory inv = new DInventory(null, lang.get("config_setting_title"), 27, plugin);
+        DInventory inv = new DInventory(lang.get("config_setting_title"), 27, plugin);
         for (int i = 0; i < inv.getSize(); i++) {
             if (i == 12 || i == 14) continue;
             ItemStack item = new ItemStack(Material.BLACK_STAINED_GLASS_PANE);
@@ -102,7 +102,7 @@ public class DPBCFunction {
         item.setItemMeta(im);
         inv.setItem(14, item);
         inv.setChannel(1);
-        p.openInventory(inv);
+        p.openInventory(inv.getInventory());
     }
 
     public static void giveCheck(Player p, String a, String b) {
