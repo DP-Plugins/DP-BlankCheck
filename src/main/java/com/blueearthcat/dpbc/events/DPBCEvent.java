@@ -1,9 +1,7 @@
 package com.blueearthcat.dpbc.events;
 
-import com.blueearthcat.dpbc.BlankCheck;
 import com.darksoldier1404.dppc.api.essentials.MoneyAPI;
 import com.darksoldier1404.dppc.api.inventory.DInventory;
-import com.darksoldier1404.dppc.lang.DLang;
 import com.darksoldier1404.dppc.utils.NBT;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -18,10 +16,9 @@ import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import static com.blueearthcat.dpbc.BlankCheck.plugin;
+
 public class DPBCEvent implements Listener {
-    private static final BlankCheck plugin = BlankCheck.getInstance();
-    private static final String prefix = plugin.data.getPrefix();
-    private static final DLang lang = plugin.data.getLang();
 
     @EventHandler
     public void onInteract(PlayerInteractEvent e){
@@ -35,13 +32,13 @@ public class DPBCEvent implements Listener {
                 int price = NBT.getIntegerTag(item, "dpbc_price") * item.getAmount();
                 MoneyAPI.addMoney(e.getPlayer(), price);
                 item.setAmount(0);
-                e.getPlayer().sendMessage(prefix + price + lang.get("add_money"));
+                e.getPlayer().sendMessage(plugin.getPrefix() + price + plugin.getLang().get("add_money"));
             }
             else {
                 int price = NBT.getIntegerTag(item, "dpbc_price");
                 MoneyAPI.addMoney(e.getPlayer(), price);
                 item.setAmount(item.getAmount() - 1);
-                e.getPlayer().sendMessage(prefix + price + lang.get("add_money"));
+                e.getPlayer().sendMessage(plugin.getPrefix() + price + plugin.getLang().get("add_money"));
             }
         }
     }
@@ -52,15 +49,14 @@ public class DPBCEvent implements Listener {
             if (!inv.isValidHandler(plugin)) return;
             if (inv.getChannel() == 0){
                 if (e.getInventory().getItem(13) == null) return;
-                YamlConfiguration config = plugin.data.getConfig();
+                YamlConfiguration config = plugin.getConfig();
                 config.set("Settings.CheckItem",e.getInventory().getItem(13));
-                plugin.data.setConfig(config);
-                plugin.data.save();
-                e.getPlayer().sendMessage(prefix + lang.get("save_check_item"));
+                plugin.saveDataContainer();
+                e.getPlayer().sendMessage(plugin.getPrefix() + plugin.getLang().get("save_check_item"));
             }
             if (inv.getChannel() == 1){
-                plugin.data.save();
-                e.getPlayer().sendMessage(prefix + lang.get("save_config"));
+                plugin.saveDataContainer();
+                e.getPlayer().sendMessage(plugin.getPrefix() + plugin.getLang().get("save_config"));
             }
         }
     }
@@ -83,29 +79,29 @@ public class DPBCEvent implements Listener {
                     ItemMeta im = item.getItemMeta();
                     if (item.getType() == Material.LIME_STAINED_GLASS_PANE){
                         item.setType(Material.RED_STAINED_GLASS_PANE);
-                        im.setDisplayName(lang.get("config_check_issuer") + lang.get("config_check_false"));
+                        im.setDisplayName(plugin.getLang().get("config_check_issuer") + plugin.getLang().get("config_check_false"));
                     }else{
                         item.setType(Material.LIME_STAINED_GLASS_PANE);
-                        im.setDisplayName(lang.get("config_check_issuer") + lang.get("config_check_true"));
+                        im.setDisplayName(plugin.getLang().get("config_check_issuer") + plugin.getLang().get("config_check_true"));
                     }
                     item.setItemMeta(im);
-                    YamlConfiguration config = plugin.data.getConfig();
+                    YamlConfiguration config = plugin.getConfig();
                     config.set("Settings.UseCheckIssuer",!config.getBoolean("Settings.UseCheckIssuer"));
-                    plugin.data.setConfig(config);
+                    plugin.saveDataContainer();
                 }
                 if (NBT.hasTagKey(item, "dpbc_checkIssueDate")){
                     ItemMeta im = item.getItemMeta();
                     if (item.getType() == Material.LIME_STAINED_GLASS_PANE){
                         item.setType(Material.RED_STAINED_GLASS_PANE);
-                        im.setDisplayName(lang.get("config_check_issuer") + lang.get("config_check_false"));
+                        im.setDisplayName(plugin.getLang().get("config_check_issuer") + plugin.getLang().get("config_check_false"));
                     }else{
                         item.setType(Material.LIME_STAINED_GLASS_PANE);
-                        im.setDisplayName(lang.get("config_check_issuer") + lang.get("config_check_true"));
+                        im.setDisplayName(plugin.getLang().get("config_check_issuer") + plugin.getLang().get("config_check_true"));
                     }
                     item.setItemMeta(im);
-                    YamlConfiguration config = plugin.data.getConfig();
+                    YamlConfiguration config = plugin.getConfig();
                     config.set("Settings.UseCheckIssueDate",!config.getBoolean("Settings.UseCheckIssueDate"));
-                    plugin.data.setConfig(config);
+                    plugin.saveDataContainer();
                 }
             }
         }

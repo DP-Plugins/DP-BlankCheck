@@ -1,5 +1,5 @@
 Settings:
-  Lang: English
+  Lang: en_US
   prefix: "&f[ &eDP-BlankCheck &f] "
   UseCheckIssuer: true
   UseCheckIssueDate: true
